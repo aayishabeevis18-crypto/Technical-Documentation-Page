@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technical Documentation — Web Fundamentals</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LEFT NAVBAR -->
+  <nav id="navbar" aria-label="Main Navigation">
+    <header>Web Documentation</header>
+
+    <a class="nav-link" href="#Introduction">Introduction</a>
+    <a class="nav-link" href="#HTML_Basics">HTML Basics</a>
+    <a class="nav-link" href="#CSS_Basics">CSS Basics</a>
+    <a class="nav-link" href="#JavaScript_and_DOM">JavaScript and DOM</a>
+    <a class="nav-link" href="#Accessibility_and_Best_Practices">Accessibility and Best Practices</a>
+  </nav>
+
+  <!-- MAIN DOCUMENT -->
+  <main id="main-doc">
+
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>
+        This documentation gives a concise overview of fundamental web technologies used to build accessible,
+        responsive user interfaces: <code>HTML</code>, <code>CSS</code>, and <code>JavaScript</code>.
+      </p>
+      <p>
+        Each section below contains short examples and recommended practices. Use the left navigation to jump to any topic.
+      </p>
+    </section>
+
+    <section class="main-section" id="HTML_Basics">
+      <header>HTML Basics</header>
+      <p>
+        HTML (HyperText Markup Language) defines the structure of web pages. Pages use elements such as
+        <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code>.
+      </p>
+      <p>
+        Use semantic elements where possible: a <code>&lt;button&gt;</code> for interactive actions, a <code>&lt;form&gt;</code> for inputs,
+        and meaningful headings for document sections.
+      </p>
+
+      <h3>Example</h3>
+      <pre><code>&lt;section id="example"&gt;
+  &lt;header&gt;Example Header&lt;/header&gt;
+  &lt;p&gt;Some content here&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+
+      <ul>
+        <li>Use semantic tags for meaning</li>
+        <li>Provide descriptive <code>alt</code> text for images</li>
+        <li>Use headings in hierarchical order (h1 → h2 → h3...)</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="CSS_Basics">
+      <header>CSS Basics</header>
+      <p>
+        CSS controls presentation: layout, colors, spacing, and responsive behavior. Use rules like
+        <code>display: flex;</code>, <code>grid-template-columns</code>, and media queries to adapt to different screens.
+      </p>
+      <p>
+        Keep styles modular and prefer classes over styling elements directly when reusability is needed.
+      </p>
+
+      <h3>Example</h3>
+      <pre><code>/* simple responsive container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}</code></pre>
+
+      <ul>
+        <li>Use <code>rem</code> or <code>em</code> for scalable typography</li>
+        <li>Prefer mobile-first media queries</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="JavaScript_and_DOM">
+      <header>JavaScript and DOM</header>
+      <p>
+        JavaScript adds interactivity. Use the DOM API to query and update elements. For example:
+        <code>document.querySelector('.btn')</code> returns the first element with class <code>btn</code>.
+      </p>
+      <p>
+        Keep DOM updates minimal — batch changes and avoid expensive reflows. Delegate event handlers when possible.
+      </p>
+
+      <h3>Small code snippets</h3>
+      <pre><code>// add a click handler
+document.querySelector('#saveBtn').addEventListener('click', function () {
+  // do something
+});</code></pre>
+
+      <ul>
+        <li>Prefer unobtrusive JavaScript (separate from HTML)</li>
+        <li>Use <code>defer</code> on script tags for non-blocking load</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Accessibility_and_Best_Practices">
+      <header>Accessibility and Best Practices</header>
+      <p>
+        Accessibility ensures all users can use your site. Include ARIA attributes when native HTML cannot convey semantics,
+        e.g., <code>role="navigation"</code> or <code>aria-label</code>.
+      </p>
+      <p>
+        Always provide keyboard focus states and logical tab order. Use color contrast sufficient for readability.
+      </p>
+
+      <h3>Checklist</h3>
+      <ul>
+        <li>Provide <code>alt</code> on images or use <code>role="presentation"</code> for decorative images</li>
+        <li>Label form controls explicitly with <code>&lt;label for="..."&gt;</code></li>
+        <li>Test with keyboard only and with screen readers</li>
+        <li>Use semantic HTML before adding ARIA attributes</li>
+      </ul>
+
+      <p>
+        Example of an accessible button: <code>&lt;button aria-label="Close dialog"&gt;✕&lt;/button&gt;</code>
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
